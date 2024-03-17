@@ -26,7 +26,14 @@
 }
 
 .text:after {
-
+    content: '';
+    position: absolute;
+    margin-top: -2px;
+    margin-left: 3px;
+    border-left: 12px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 12px solid rgba(0, 102, 204, 1);
+    transform: rotate(226deg);
 }
 
 .name {
