@@ -24,7 +24,7 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
         onDebouncedChange,
 
         ...restProps // все остальные пропсы попадут в объект restProps
-    }
+    },
 ) => {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
 
@@ -36,7 +36,8 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
 
             // остановить предыдущий таймер
             // запустить новый на 1500ms, в котором вызовется функция
-
+            clearTimeout(timerId)
+            setTimerId(+setTimeout(() => onDebouncedChange(value), 1_500))
             //
         }
     }
